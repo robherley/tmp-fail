@@ -1,0 +1,15 @@
+name: CI
+
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: [ self-hosted ]
+    steps:
+      - name: print stuff
+        run: |
+          n=0
+          while [ "$n" -lt 5000 ]; do
+            echo "line${n}"
+            n=$(( n + 1 ))
+          done
+          exit 1
